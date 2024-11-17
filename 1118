@@ -1,0 +1,111 @@
+#include <stdio.h>//구조체 선언
+struct student {
+	//구조체 멤버 3개 정의
+	int number;
+	char name[10];
+	double grade;
+};
+
+int main(void) {
+
+	struct student s1 = {20210000, "Kim", 4.5}; // 구조체 멤버 변수 선언과 초기화
+
+	return 0;
+}
+/*
+#include <stdio.h>#include <string.h>//구조체 선언 & 구조체 변수 선언
+struct student {
+	//구조체 멤버 3개 정의
+	int number;
+	char name[10];
+	double grade;
+}s1;
+
+int main(void) {
+
+	//구조체 멤버 참조
+	s1.number = 20210000;
+	strcpy_s(s1.name, 10, "Kim");
+	s1.grade = 4.5;
+
+	return 0;
+}
+---
+#include <stdio.h>#include <string.h>//구조체 선언
+struct student {
+	//구조체 멤버
+	int number;
+	char name[10];
+	double grade;
+}s1;
+
+int main(void) {
+
+	printf("학번: ");
+	scanf_s("%d", &s1.number);
+
+	printf("이름: ");
+	scanf_s("%s", s1.name, 10);
+
+	printf("학점: ");
+	scanf_s("%lf", &s1.grade);
+
+	printf("학번: %d\n이름: %s\n학점: %f\n\n", s1.number, s1.name, s1.grade);
+
+	return 0;
+}
+
+---
+#include <stdio.h>struct point {
+	int x, y;
+};
+
+int main(void){
+
+	struct point p1 = { 10,20 };
+	struct point p2 = { 10,10 };
+	struct point p3 = p1; // 구조체 변수 대입
+
+	printf("p3의 좌표 : %d %d\n", p3.x, p3.y);
+
+
+   	 // 구조체 변수의 비교
+
+	if (p1.x == p2.x && p1.y == p2.y)
+		printf("p1과 p2의 좌표는 같습니다.\n");
+	else
+		printf("p1과 p2의 좌표는 다릅니다.\n");
+
+	return 0;
+}
+
+---
+
+#include <stdio.h>struct point {
+	int x, y;
+};
+struct rect {
+	struct point p1, p2; // 왼쪽 상단 좌표, 오른쪽 하단 좌표
+};
+int main(void){
+
+	struct rect r; // rect 구조체 변수 r 선언
+	int width, height, area, peri; // 사각형의 가로, 세로, 면적, 둘레
+
+	printf("왼쪽 상단의 좌표: ");
+	scanf_s("%d %d", &r.p1.x, &r.p1.y);
+
+	printf("오른쪽 하단의 좌표: ");
+	scanf_s("%d %d", &r.p2.x, &r.p2.y);
+
+	width = r.p2.x - r.p1.x;
+	height = r.p1.y - r.p2.y;
+	area = width * height;
+	peri = 2 * (width + height);
+
+	printf("면적: %d\n둘레: %d\n", area, peri);
+
+	return 0;
+}
+
+*/
