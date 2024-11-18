@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+struct student
+{
+		int number;
+		char name[10];
+		double grade;
+};
+
+int main(void)
+{
+		struct student list[3];
+		
+		for(int i = 0; i < 3; i++)
+		{
+				printf("학번:");
+				scnaf_s("%d, &list[i].number);
+				
+				printf("이름:");
+				scanf("%s, list[i].name,10);
+				
+				printf("학점:");
+				scanf_s("%lf:,&list[i].grade);
+		}
+		
+		for(int i = 0; i < 3; i++)
+		printf("이름: %s, 학점:%f",list[i]. name, list[i].grade);
+		
+		return 0;
+		}
